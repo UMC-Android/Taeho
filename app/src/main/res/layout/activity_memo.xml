@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <EditText
+        android:id="@+id/memoEditText"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:gravity="top|start"
+        android:inputType="textMultiLine"
+        android:maxLength="5000"
+        android:maxLines="500"
+        android:minLines="5"
+        android:padding="10dp"
+        android:scrollbars="vertical"
+        android:textSize="16sp"
+        android:textColor="@android:color/black"
+        android:background="@android:color/white"
+        android:hint="메모 내용 입력"/>
+
+    <Button
+        android:id="@+id/saveButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="메모 저장"/>
+
+</LinearLayout>
