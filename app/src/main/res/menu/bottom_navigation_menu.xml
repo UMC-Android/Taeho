@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/Camera"
+        android:icon="@drawable/icon_camera"
+        android:title="Camera" />
+
+    <item
+        android:id="@+id/Home"
+        android:icon="@drawable/icon_home"
+        android:title="Home"
+        android:checked="true"/>
+
+    <item
+        android:id="@+id/Picture"
+        android:icon="@drawable/icon_picture"
+        android:title="Picture" />
+
+</menu>
