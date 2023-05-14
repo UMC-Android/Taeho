@@ -19,6 +19,7 @@
         android:textSize="16sp"
         android:textColor="@android:color/black"
         android:background="@android:color/white"
+        android:textColorHint="#777777"
         android:hint="메모 내용 입력"/>
 
     <Button
