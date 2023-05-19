@@ -158,7 +158,7 @@ public class MainActivity extends AppCompatActivity {
                     });
                 }
 
-                if (timeRemaining <= 0) {
+                if (timeRemaining <= 0 && !isTimerFinished) {
                     runOnUiThread(new Runnable() {
                         @Override
                         public void run() {
@@ -172,6 +172,11 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void stopTimer() { // 타이머 초기화
+        if (timeThread != null && timeThread.isAlive()) {
+            // 이미 실행 중인 타이머 스레드가 있을 경우 중복 실행을 방지하기 위해 종료시킴
+            timeThread.interrupt();
+        }
+
         isTimerRunning = false;
         isTimerFinished = true;
         minUp.setVisibility(View.VISIBLE);
@@ -182,6 +187,7 @@ public class MainActivity extends AppCompatActivity {
         stopButton.setVisibility(View.GONE);
         pauseButton.setVisibility(View.GONE);
         setTime = 0;
+        timeRemaining = 0;
         timeHandler.removeCallbacksAndMessages(null);
         timeTextView.setText("00 : 00");
     }
@@ -273,6 +279,7 @@ public class MainActivity extends AppCompatActivity {
         isTimerRunning = false;
         startButton.setText("START");
         timeTextView.setText("타이머 종료");
+        setTime = 0;
         soundPool.play(soundId, 1.0f, 1.0f, 1, 0, 1.0f);
     }
 }
