@@ -10,7 +10,7 @@
         android:layout_height="wrap_content"
         android:padding="16dp"
         android:textSize="16sp"
-        android:minHeight="165dp"/>
+        android:minHeight="105dp"/>
 
     <View
         android:layout_width="match_parent"
@@ -18,25 +18,26 @@
         android:background="#888888"
         android:layout_alignBottom="@id/memoTextView"/>
 
-    <Button
+    <ImageView
         android:id="@+id/favoriteButton"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
         android:layout_alignParentEnd="true"
         android:layout_alignTop="@id/memoTextView"
         android:layout_marginEnd="15dp"
         android:layout_marginTop="15dp"
-        android:background="@drawable/star_yellow"
+        android:background="@drawable/star_grey"
         android:contentDescription="@string/app_name"/>
 
-    <Button
+    <ImageView
         android:id="@+id/likeButton"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
-        android:layout_alignStart="@id/favoriteButton"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_alignParentEnd="true"
         android:layout_below="@id/favoriteButton"
+        android:layout_marginEnd="15dp"
         android:layout_marginTop="15dp"
-        android:background="@drawable/thumb_up"
+        android:background="@drawable/like_grey"
         android:contentDescription="@string/app_name"/>
 
 </RelativeLayout>

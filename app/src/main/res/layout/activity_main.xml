@@ -19,4 +19,10 @@
         android:layout_height="wrap_content"
         android:text="메모 추가"/>
 
+    <Button
+        android:id="@+id/favoriteBasket"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="즐겨찾기 모음"/>
+
 </LinearLayout>

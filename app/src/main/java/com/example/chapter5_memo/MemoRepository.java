@@ -37,4 +37,12 @@ public class MemoRepository {
         return allMemos;
     }
 
+    public void toggleLikedState(long memoId) {
+        executor.execute(() -> memoDao.toggleLikedState(memoId));
+    }
+
+    public LiveData<List<MemoEntity>> getFavoriteMemos() {
+        return memoDao.getFavoriteMemos();
+    }
+
 }

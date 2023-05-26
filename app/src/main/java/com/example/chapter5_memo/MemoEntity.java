@@ -1,5 +1,6 @@
 package com.example.chapter5_memo;
 
+import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
@@ -13,9 +14,17 @@ public class MemoEntity {
     private String title;
     private String content;
     private Date timestamp;
+
+    @ColumnInfo(name = "is_favorite")
     private boolean isFavorite;
 
+    @ColumnInfo(name = "is_liked")
+    private boolean isLiked;
 
+
+    public boolean isLiked() { return isLiked; }
+
+    public void setLiked(boolean liked) { isLiked = liked; }
 
     public boolean isFavorite() {
         return isFavorite;

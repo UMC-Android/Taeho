@@ -9,7 +9,7 @@ import androidx.room.RoomDatabase;
 import androidx.room.TypeConverters;
 import androidx.sqlite.db.SupportSQLiteDatabase;
 
-@Database(entities = {MemoEntity.class}, version = 2)
+@Database(entities = {MemoEntity.class}, version = 5)
 @TypeConverters(Converters.class)
 public abstract class MemoDatabase extends RoomDatabase {
 

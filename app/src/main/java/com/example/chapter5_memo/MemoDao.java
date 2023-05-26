@@ -23,4 +23,10 @@ public interface MemoDao {
 
     @Query("SELECT * FROM memo_table ORDER BY timestamp DESC")
     LiveData<List<MemoEntity>> getAllMemos();
+
+    @Query("UPDATE memo_table SET is_liked = NOT is_liked WHERE id = :memoId")
+    void toggleLikedState(long memoId);
+
+    @Query("SELECT * FROM memo_table WHERE is_favorite = 1")
+    LiveData<List<MemoEntity>> getFavoriteMemos();
 }

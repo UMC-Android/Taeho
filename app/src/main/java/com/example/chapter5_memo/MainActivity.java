@@ -84,6 +84,14 @@ public class MainActivity extends AppCompatActivity {
                 // 즐겨찾기 상태 업데이트
                 memoRepository.update(memo);
             }
+
+            @Override
+            public void onLikeClick(int position) {
+                MemoEntity memo = memoList.get(position);
+                long memoId = memo.getId();
+                boolean isLiked = memo.isLiked();
+                memoRepository.toggleLikedState(memoId);
+            }
         }, this, recyclerView);
 
         recyclerView.setAdapter(adapter);
@@ -95,6 +103,15 @@ public class MainActivity extends AppCompatActivity {
                 Intent intent = new Intent(MainActivity.this, MemoActivity.class);
                 memoLauncher.launch(intent);
             }
-        });;
+        });
+
+        Button favoriteBasket = findViewById(R.id.favoriteBasket);
+        favoriteBasket.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, FavoriteActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 }
