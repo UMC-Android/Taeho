@@ -1,20 +1,42 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:orientation="vertical">
+    android:layout_height="wrap_content">
 
-    <TextView xmlns:android="http://schemas.android.com/apk/res/android"
+    <TextView
         android:id="@+id/memoTextView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="16dp"
-        android:textSize="16sp" />
+        android:textSize="16sp"
+        android:minHeight="165dp"/>
 
     <View
         android:layout_width="match_parent"
         android:layout_height="1dp"
-        android:background="#888888" />
+        android:background="#888888"
+        android:layout_alignBottom="@id/memoTextView"/>
 
-</LinearLayout>
+    <Button
+        android:id="@+id/favoriteButton"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignTop="@id/memoTextView"
+        android:layout_marginEnd="15dp"
+        android:layout_marginTop="15dp"
+        android:background="@drawable/star_yellow"
+        android:contentDescription="@string/app_name"/>
+
+    <Button
+        android:id="@+id/likeButton"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_alignStart="@id/favoriteButton"
+        android:layout_below="@id/favoriteButton"
+        android:layout_marginTop="15dp"
+        android:background="@drawable/thumb_up"
+        android:contentDescription="@string/app_name"/>
+
+</RelativeLayout>

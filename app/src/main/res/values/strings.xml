@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Chapter5_Memo</string>
+    <string name="title_activity_favorite">FavoriteActivity</string>
 </resources>
